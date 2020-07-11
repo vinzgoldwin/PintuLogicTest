@@ -12,8 +12,7 @@ function countFactor($number)
             if ($i % $j == 0) {
                 $count++;
             }
-            // optimize with no need to operate the selected number
-            // if the count is higher than 6 already
+            // optimize with break if the count is higher than 6
             if ($count > 6)
                 break;
         }
@@ -34,15 +33,15 @@ function countFactor($number)
     );
 }
 
-echo "H(262144)=".
-    countFactor(262144)['count'].
-    " with Execution time:".
-    countFactor(262144)['exec_time'];
+$countNumber = countFactor(262144);
 
-echo "H(134217728)".
-    countFactor(134217728)['count'].
-    "with Execution time:".
-    countFactor(134217728)['exec_time'];
+//$countNumber = countFactor(13421772);
+
+echo "H(262144)=".
+   $countNumber['count'].
+    " with Execution time:".
+    $countNumber['exec_time'];
+
 
 
 

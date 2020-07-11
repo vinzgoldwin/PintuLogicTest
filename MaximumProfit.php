@@ -2,10 +2,10 @@
 
 function profit($arr, $arrSize)
 {
-    // initiate the first profit
+    // initialize the first profit
     $profit = $arr[1] - $arr[0];
 
-    // initiate the first minimum buying
+    // initialize the first minimum buying
     $minBuying = $arr[0];
 
     for($i = 1; $i < $arrSize; $i++)
@@ -22,7 +22,7 @@ function profit($arr, $arrSize)
             $minBuying = $arr[$i];
     }
 
-    // if the calculation of profit is negatif value, just give it zero value
+    // if the calculation of profit is negative value, just give it zero value
     if ($profit < 0) {
         $profit = 0;
         $max = "-";
@@ -46,13 +46,10 @@ $fread = fread($fopen, filesize('data.txt'));
 $data = explode(' ', $fread);
 $arraySize = sizeof($data);
 
-$test = [6,5,4];
-$testSize = sizeof($test);
-
 // Function calling
 echo 'Highest profit is '.
-    profit($test, $testSize)['profit'].
+    profit($data, $arraySize)['profit'].
     ', Min Buy is ' .
-    profit($test, $testSize)['minBuying'].
+    profit($data, $arraySize)['minBuying'].
     ', Max Buy is '.
-    profit($test, $testSize)['maxBuying'];
+    profit($data, $arraySize)['maxBuying'];
